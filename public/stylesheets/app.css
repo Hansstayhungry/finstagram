@@ -1,6 +1,6 @@
 header {
     background-color:  #244751;
-    color: #E8FDFF
+    color: #E8FDFF;
 }
 
 body {
@@ -14,7 +14,7 @@ main {
 }
 
 .finstagram-post {
-    margin-bottom: 48px
+    margin-bottom: 48px;
 }
 
 .finstagram-post .user-info img {
@@ -26,5 +26,5 @@ a.photo{
 }
 
 a.photo:hover{
-    padding: 10px
+    padding: 10px;
 }
