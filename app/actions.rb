@@ -12,20 +12,20 @@ end
 get '/' do
   #File.read(File.join('app/views', 'index.html'))
   #"Hello world!"
-  finstagram_post = {
+  @finstagram_post_shark = {
     username: "sharky_j",
     avatar_url: "http://naserca.com/images/sharky_j.jpg",
     photo_url: "http://naserca.com/images/shark.jpg",
     humanized_time_ago: humanized_time_ago(15),
     like_count: 0,
     comment_count: 1,
-    comment: [{
+    comments: [{
       username:"sharky_j",
       text: "Out for the long weekend... too embarrassed to show y'all the beach bod!"
     }]
   } 
 
-  finstagram_post_whale = {
+  @finstagram_post_whale = {
     username: "kirk_whalum",
     avatar_url: "http://naserca.com/images/kirk_whalum.jpg",
     photo_url: "http://naserca.com/images/whale.jpg",
@@ -38,7 +38,7 @@ get '/' do
     }]
   }
 
-  finstagram_post_marlin = {
+  @finstagram_post_marlin = {
     username: "marlin_peppa",
     avatar_url: "http://naserca.com/images/marlin_peppa.jpg",
     photo_url: "http://naserca.com/images/marlin.jpg",
@@ -51,32 +51,8 @@ get '/' do
     }]
   }
 
-  [finstagram_post, finstagram_post_whale, finstagram_post_marlin].to_s
+  @finstagram_posts = [@finstagram_post_shark, @finstagram_post_whale, @finstagram_post_marlin]
+
+  erb(:index)
 
 end
-
-
-  ## if the time_ago_in_minutes is greater than 60
-  #if time_ago_in_minutes > 60
-#
-  #  # return this string
-  #  "#{time_ago_in_minutes / 60} hours ago"
-#
-  #else
-  #  "#{time_ago_in_minutes} minutes ago"
-#
-  #end
-#
-  ##elsif time_ago_in_minutes == 60
-  ##  "an hour"
-##
-  ##elsif time_ago_in_minutes <= 1
-  ##  "just a moment ago"
-  ##
-  ### if it's less than or equal
-  ##else
-##
-  ##  # return this instead
-  ##  "less than an hour"
-  ##end
-
