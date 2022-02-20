@@ -13,6 +13,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <%= yield %>   
+        <header>
+            <h1> 
+                <a href="/">Finstagram</a>
+            </h1>
+            <div class="login-info">
+                <% if current_user %>
+                    <%= current_user.username %>
+                    <a href="/logout">Logout</a>
+                <% else %>
+                    <a href="/login">Login</a>
+                    <a href="/signup">Signup</a>
+                <% end %>
+            </div>
+        </header>
+        <main role="main">
+            <%= yield %>
+        </main>
     </body>
 </html>
