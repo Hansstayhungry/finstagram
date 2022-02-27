@@ -6,7 +6,6 @@ configure do
       adapter: "sqlite3",
       database: "db/db.sqlite3"
     }
-  end
 
   else
     db = URI.parse(ENV['DATABASE_URL'])
